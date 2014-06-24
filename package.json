@@ -1,0 +1,20 @@
+{
+    "name": "win32",
+    "version": "0.9.2",
+    "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
+    "description": "Windows specific node functions",
+    "homepage": "http://github.com/coderaiser/win32",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/coderaiser/win32.git"
+    },
+    "dependencies": {
+        "util-io": "1.1.x",
+        "pipe-io": "0.9.x"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.4.x"
+    },
+    "main": "./lib/win.js"
+}
