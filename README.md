@@ -6,7 +6,7 @@ Win32 specific functions module
 ## Install
 
 ```
-npm install inline-io
+npm install win32 --save
 ```
 
 ## Use
