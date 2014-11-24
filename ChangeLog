@@ -1,3 +1,12 @@
+2014.11.24, v0.9.7
+
+feature:
+- (package) add checkup
+- (package) v0.9.6
+- (package) pipe-io v1.1.0
+- (package) util-io v1.6.0
+
+
 2014.11.3, v0.9.6
 
 feature:
