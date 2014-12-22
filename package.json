@@ -10,8 +10,7 @@
   },
   "dependencies": {
     "checkup": "~1.0.1",
-    "pipe-io": "~1.1.0",
-    "util-io": "~1.6.0"
+    "pipe-io": "~1.1.0"
   },
   "license": "MIT",
   "engines": {
