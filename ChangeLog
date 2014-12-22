@@ -1,3 +1,9 @@
+2014.12.22, v0.9.8
+
+feature:
+- (win32) rm util-io
+
+
 2014.11.24, v0.9.7
 
 feature:
