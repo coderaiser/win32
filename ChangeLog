@@ -1,3 +1,9 @@
+2015.02.02, v0.9.10
+
+feature:
+- (win32) checkup -> assert
+
+
 2014.12.23, v0.9.9
 
 fix:
