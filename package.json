@@ -9,7 +9,6 @@
     "url": "git://github.com/coderaiser/win32.git"
   },
   "dependencies": {
-    "checkup": "~1.0.1",
     "pipe-io": "~1.1.0"
   },
   "license": "MIT",
