@@ -1,3 +1,10 @@
+2015.08.17, v0.9.11
+
+feature:
+- feature(package) pipe-io v1.2.0
+- feature(package) main: ./lib/win32.js -> lib/win3.js
+
+
 2015.02.02, v0.9.10
 
 feature:
