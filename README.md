@@ -75,7 +75,6 @@ In old `node.js` environments that not fully supports `es2015`, `win32` could be
 var win = require('win32/legacy');
 ```
 
-```
 ## License
 
 MIT
