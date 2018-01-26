@@ -1,3 +1,9 @@
+2018.01.26, v1.0.3
+
+feature:
+- (win32) add fullstore from npm
+
+
 2016.11.15, v1.0.2
 
 fix:
