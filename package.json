@@ -10,11 +10,7 @@
   },
   "main": "lib/win.js",
   "scripts": {
-    "lint": "eslint lib",
-    "6to5": "buble lib -o legacy",
-    "build": "redrun 6to5 legacy",
-    "legacy": "echo \"module.exports = require('./win');\" > legacy/index.js",
-    "wisdom": "npm run build"
+    "lint": "eslint lib"
   },
   "license": "MIT",
   "dependencies": {
@@ -24,8 +20,11 @@
     "through2": "^2.0.1"
   },
   "devDependencies": {
-    "buble": "^0.14.2",
-    "eslint": "^3.10.1",
-    "redrun": "^5.9.3"
+    "eslint": "^4.19.1",
+    "eslint-plugin-node": "^6.0.1",
+    "redrun": "^6.0.4"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
