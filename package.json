@@ -16,7 +16,7 @@
   "dependencies": {
     "fullstore": "^1.1.0",
     "iconv-lite": "^0.4.13",
-    "pullout": "^1.0.1",
+    "pullout": "^2.0.0",
     "through2": "^2.0.1"
   },
   "devDependencies": {
