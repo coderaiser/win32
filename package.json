@@ -22,7 +22,7 @@
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-plugin-node": "^8.0.0",
-    "redrun": "^6.0.4"
+    "redrun": "^7.0.3"
   },
   "engines": {
     "node": ">=4.0.0"
