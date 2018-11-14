@@ -17,7 +17,7 @@
     "fullstore": "^1.1.0",
     "iconv-lite": "^0.4.13",
     "pullout": "^2.0.0",
-    "through2": "^2.0.1"
+    "through2": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
