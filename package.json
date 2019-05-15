@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "eslint": "^5.9.0",
-    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-node": "^9.0.1",
     "redrun": "^7.0.3"
   },
   "engines": {
