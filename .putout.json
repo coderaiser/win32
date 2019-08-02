@@ -1,0 +1,5 @@
+{
+    "rules": {
+        "remove-process-exit": false
+    }
+}
