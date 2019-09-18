@@ -1,3 +1,17 @@
+2019.09.18, v3.0.1
+
+feature:
+- (package) eslint-plugin-putout v2.0.0
+- (package) eslint-plugin-node v10.0.0
+- (package) fullstore v2.0.2
+- (package) putout v6.0.0
+- (win) fullstore/legacy -> fullstore
+- (win32) add madrun
+- (package) eslint v6.1.0
+- (package) iconv-lite v0.5.0
+- (package) eslint-plugin-node v9.0.1
+
+
 2018.11.14, v3.0.0
 
 feature:
