@@ -24,7 +24,8 @@
     "eslint": "^6.1.0",
     "eslint-plugin-node": "^9.0.1",
     "eslint-plugin-putout": "^1.9.1",
-    "putout": "^4.65.2",
+    "madrun": "^3.0.5",
+    "putout": "^6.0.0",
     "redrun": "^7.0.3"
   },
   "engines": {
