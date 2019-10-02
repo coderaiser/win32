@@ -51,7 +51,7 @@ Determines is `command` is volume:
 
 ```js
 const win = require('win32');
-win.isVlume('c:\\');
+win.isVolume('c:\\');
 // returns on windows
 true
 ```
