@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "fullstore": "^2.0.2",
+    "fullstore": "^3.0.0",
     "iconv-lite": "^0.5.0",
     "pullout": "^4.0.0",
     "through2": "^3.0.0"
