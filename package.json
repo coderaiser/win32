@@ -28,7 +28,7 @@
     "putout": "^13.7.1"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "publishConfig": {
     "access": "public"
