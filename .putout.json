@@ -1,5 +1,5 @@
 {
     "rules": {
-        "remove-process-exit": false
+        "remove-process-exit": "off"
     }
 }

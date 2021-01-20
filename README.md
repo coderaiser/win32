@@ -1,5 +1,4 @@
-win32
-=====
+# win32
 
 Win32 specific functions module
 
@@ -53,7 +52,7 @@ Determines is `command` is volume:
 const win = require('win32');
 win.isVolume('c:\\');
 // returns on windows
-true
+true;
 ```
 
 ### isChangeVolume(command)
@@ -64,10 +63,9 @@ Determines is `command` is changing of `volume`:
 const win = require('win32');
 win.isChangeVolume('c:');
 // returns
-true
+true;
 ```
 
 ## License
 
 MIT
-
