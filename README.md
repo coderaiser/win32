@@ -10,6 +10,10 @@ npm install win32 --save
 
 ## Use
 
+### read(path, options)
+
+Read path and if it's root, return `volumes` on `win32`
+
 ### getVolumes()
 
 Get volumes of Windows platform
@@ -17,9 +21,7 @@ Get volumes of Windows platform
 ```js
 const win = require('win32');
 
-win.getVolumes((error, volumes) => {
-    console.log(error || volumes);
-});
+const volumes = await win.getVolumes();
 ```
 
 ### unicodify()
