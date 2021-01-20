@@ -1,3 +1,16 @@
+2021.01.20, v5.0.0
+
+feature:
+- (win32) add read
+- (win32) drop support of node < 14
+- (package) iconv-lite v0.6.2
+- (package) through2 v4.0.2
+- (package) putout v13.7.1
+- (package) madrun v8.6.0
+- (package) eslint-plugin-putout v6.11.1
+- (package) eslint v7.18.0
+
+
 2020.03.25, v4.0.1
 
 feature:
