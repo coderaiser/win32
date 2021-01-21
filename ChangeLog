@@ -1,3 +1,9 @@
+2021.01.21, v5.1.0
+
+feature:
+- (win32) add abilty to convert path
+
+
 2021.01.20, v5.0.4
 
 fix:
