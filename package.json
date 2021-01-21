@@ -17,6 +17,7 @@
   "dependencies": {
     "fullstore": "^3.0.0",
     "iconv-lite": "^0.6.2",
+    "mellow": "^3.0.0",
     "pullout": "^4.0.0",
     "redzip": "^1.3.0"
   },
