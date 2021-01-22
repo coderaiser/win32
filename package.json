@@ -8,10 +8,17 @@
     "type": "git",
     "url": "git://github.com/coderaiser/win32.git"
   },
-  "main": "lib/win.js",
+  "main": "lib/win32.js",
   "scripts": {
     "lint": "madrun lint",
-    "fix:lint": "madrun fix:lint"
+    "fresh:lint": "madrun fresh:lint",
+    "lint:fresh": "madrun lint:fresh",
+    "fix:lint": "madrun fix:lint",
+    "test": "madrun test",
+    "watch:coverage": "madrun watch:coverage",
+    "watch:test": "madrun watch:test",
+    "report": "madrun report",
+    "coverage": "madrun coverage"
   },
   "license": "MIT",
   "dependencies": {
@@ -22,11 +29,14 @@
     "redzip": "^1.3.0"
   },
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "eslint": "^7.18.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-putout": "^6.11.1",
     "madrun": "^8.6.0",
-    "putout": "^13.7.1"
+    "nyc": "^15.1.0",
+    "putout": "^13.7.1",
+    "supertape": "^4.8.0"
   },
   "engines": {
     "node": ">=14"

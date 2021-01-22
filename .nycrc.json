@@ -1,0 +1,16 @@
+{
+    "check-coverage": false,
+    "all": false,
+    "exclude": [
+        "test",
+        "**/*.spec.js",
+        "**/fixture",
+        "**/*.*.js",
+        "packages/*/bin",
+        "packages/*/test"
+    ],
+    "branches": 100,
+    "lines": 100,
+    "functions": 100,
+    "statements": 100
+}
