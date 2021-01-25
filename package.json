@@ -34,9 +34,10 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-putout": "^6.11.1",
     "madrun": "^8.6.0",
+    "mock-require": "^3.0.3",
     "nyc": "^15.1.0",
     "putout": "^13.7.1",
-    "supertape": "^4.8.0"
+    "supertape": "^4.8.1"
   },
   "engines": {
     "node": ">=14"
