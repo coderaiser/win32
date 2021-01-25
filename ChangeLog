@@ -1,3 +1,9 @@
+2021.01.25, v5.1.9
+
+fix:
+- (win32) path should be first field
+
+
 2021.01.25, v5.1.8
 
 fix:

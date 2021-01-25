@@ -1,6 +1,6 @@
 {
   "name": "win32",
-  "version": "5.1.8",
+  "version": "5.1.9",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "Windows specific node functions",
   "homepage": "http://github.com/coderaiser/win32",
