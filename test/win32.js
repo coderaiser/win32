@@ -35,6 +35,7 @@ test('win32: read: stringify with spaces', async (t) => {
     const win32 = reRequire('..');
     const result = await pullout(await win32.read('.'));
     const expected = stringify({
+        path: '.',
         files: [{
             name: 'hello.txt',
             type: 'file',
@@ -43,7 +44,6 @@ test('win32: read: stringify with spaces', async (t) => {
             mode: '--- --- ---',
             owner: 0,
         }],
-        path: '.',
     }, null, 4);
     
     stopAll();
@@ -73,6 +73,7 @@ test('win32: read: root', async (t) => {
         root: '/hello',
     }));
     const expected = stringify({
+        path: '/world',
         files: [{
             name: 'hello.txt',
             type: 'file',
@@ -81,7 +82,6 @@ test('win32: read: root', async (t) => {
             mode: '--- --- ---',
             owner: 0,
         }],
-        path: '/world',
     }, null, 4);
     
     stopAll();
