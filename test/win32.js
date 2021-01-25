@@ -89,3 +89,41 @@ test('win32: read: root', async (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('win32: read: root: is set', async (t) => {
+    const read = stub().returns({
+        files: [{
+            name: 'hello.txt',
+            type: 'file',
+            size: '5b',
+            date: '--.--.----',
+            mode: '--- --- ---',
+            owner: 0,
+        }],
+    });
+    
+    mockRequire('redzip', {
+        read,
+    });
+    
+    const win32 = reRequire('..');
+    const result = await pullout(await win32.read('/', {
+        root: '/',
+    }));
+    const expected = stringify({
+        path: '/',
+        files: [{
+            name: 'hello.txt',
+            type: 'file',
+            size: '5b',
+            date: '--.--.----',
+            mode: '--- --- ---',
+            owner: 0,
+        }],
+    }, null, 4);
+    
+    stopAll();
+    
+    t.equal(result, expected);
+    t.end();
+});
