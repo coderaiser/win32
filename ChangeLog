@@ -1,3 +1,9 @@
+2021.01.26, v5.1.11
+
+fix:
+- (win32) read: absent slash (coderaiser/cloudcmd#318)
+
+
 2021.01.25, v5.1.10
 
 fix:
