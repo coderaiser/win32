@@ -1,5 +1,6 @@
 'use strict';
 
+const {Readable} = require('stream');
 const {stub, test} = require('supertape');
 const pullout = require('pullout');
 const mockRequire = require('mock-require');
@@ -10,7 +11,9 @@ const {reRequire, stopAll} = mockRequire;
 const {stringify} = JSON;
 
 test('win32: unicodify: linux', async (t) => {
-    const result = await pullout(unicodify('hello'));
+    const stream = unicodify();
+    Readable.from('hello').pipe(stream);
+    const result = await pullout(stream);
     
     t.equal(result, 'hello');
     t.end();
