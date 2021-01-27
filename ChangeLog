@@ -1,3 +1,13 @@
+2021.01.27, v5.1.12
+
+fix:
+- (win32) unicodify: should return stream
+
+feature:
+- (package) eslint-plugin-putout v7.0.0
+- (package) putout v14.0.0
+
+
 2021.01.26, v5.1.11
 
 fix:
