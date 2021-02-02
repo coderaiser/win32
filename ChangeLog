@@ -1,3 +1,12 @@
+2021.02.02, v5.2.0
+
+feature:
+- feature(win32) read: add size
+- feature(win32) add size
+- feature(package) redzip v1.8.1
+
+
+
 2021.01.27, v5.1.12
 
 fix:
