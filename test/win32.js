@@ -55,6 +55,31 @@ test('win32: read: stringify with spaces', async (t) => {
     t.end();
 });
 
+test.only('win32: read: dir: size', async (t) => {
+    const read = stub().returns({
+        files: [{
+            name: 'hello.txt',
+            type: 'file',
+            size: '5b',
+            date: '--.--.----',
+            mode: '--- --- ---',
+            owner: 0,
+        }],
+    });
+    
+    mockRequire('redzip', {
+        read,
+    });
+    
+    const win32 = reRequire('..');
+    const {size} = await win32.read(__dirname);
+    
+    stopAll();
+    
+    t.equal(size, 1337);
+    t.end();
+});
+
 test('win32: read: root', async (t) => {
     const read = stub().returns({
         files: [{
