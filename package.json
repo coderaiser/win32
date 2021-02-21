@@ -37,7 +37,7 @@
     "madrun": "^8.6.0",
     "mock-require": "^3.0.3",
     "nyc": "^15.1.0",
-    "putout": "^14.0.0",
+    "putout": "^15.1.2",
     "supertape": "^4.8.1"
   },
   "engines": {
