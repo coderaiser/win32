@@ -1,3 +1,15 @@
+2021.02.21, v5.2.1
+
+fix:
+- (win32) read: root: on windows
+
+feature:
+- (package) putout v15.1.2
+- (win32) read: add size
+- (win32) add size
+- (package) redzip v1.8.1
+
+
 2021.02.02, v5.2.0
 
 feature:
