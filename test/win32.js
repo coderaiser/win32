@@ -57,7 +57,7 @@ test('win32: read: stringify with spaces', async (t) => {
     t.end();
 });
 
-test('win32: read: dir: size', async (t) => {
+test('win32: read: dir: contentLength', async (t) => {
     const read = stub().returns({
         type: 'directory',
         files: [{
@@ -75,11 +75,11 @@ test('win32: read: dir: size', async (t) => {
     });
     
     const win32 = reRequire('..');
-    const {size} = await win32.read(__dirname);
+    const {contentLength} = await win32.read(__dirname);
     
     stopAll();
     
-    t.equal(typeof size, 'number');
+    t.equal(contentLength, 267);
     t.end();
 });
 
