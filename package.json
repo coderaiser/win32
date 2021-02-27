@@ -37,7 +37,7 @@
     "eslint-plugin-putout": "^7.0.0",
     "madrun": "^8.6.0",
     "mock-require": "^3.0.3",
-    "putout": "^15.1.2",
+    "putout": "^15.3.1",
     "supertape": "^5.0.0"
   },
   "engines": {
