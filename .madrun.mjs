@@ -8,7 +8,7 @@ export default {
     'test': () => 'tape test/*.js',
     'watch:coverage': () => run('watcher', 'npm run coverage'),
     'watch:test': () => run('watcher', 'npm test'),
-    'report': () => 'c8 report --reporter=text-lcov | coveralls',
+    'report': () => 'c8 report --reporter=lcov',
     'coverage': () => 'c8 npm test',
 };
 
