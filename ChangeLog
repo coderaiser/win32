@@ -1,3 +1,10 @@
+2021.03.01, v6.0.1
+
+fix:
+- fix(win32) read: files
+
+
+
 2021.02.27, v6.0.0
 
 feature:
