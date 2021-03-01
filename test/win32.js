@@ -83,6 +83,34 @@ test('win32: read: dir: contentLength', async (t) => {
     t.end();
 });
 
+test('win32: read: dir: files', async (t) => {
+    const expectedFiles = [{
+        name: 'hello.txt',
+        type: 'file',
+        size: '5b',
+        date: '--.--.----',
+        mode: '--- --- ---',
+        owner: 0,
+    }];
+    
+    const read = stub().returns({
+        type: 'directory',
+        files: expectedFiles,
+    });
+    
+    mockRequire('redzip', {
+        read,
+    });
+    
+    const win32 = reRequire('..');
+    const {files} = await win32.read(__dirname);
+    
+    stopAll();
+    
+    t.equal(files, expectedFiles);
+    t.end();
+});
+
 test('win32: read: root', async (t) => {
     const read = stub().returns({
         files: [{
