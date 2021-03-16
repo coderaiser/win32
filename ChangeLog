@@ -1,3 +1,9 @@
+2021.03.16, v6.0.2
+
+fix:
+- (win32) read: web path -> win path (coderaiser/cloudcmd#333)
+
+
 2021.03.01, v6.0.1
 
 fix:
