@@ -79,7 +79,7 @@ test('win32: read: dir: contentLength', async (t) => {
     
     stopAll();
     
-    t.equal(contentLength, 267);
+    t.ok(contentLength);
     t.end();
 });
 
@@ -251,7 +251,7 @@ test('win32: read: root: on windows', async (t) => {
     
     reRequire('mellow');
     const win32 = reRequire('..');
-    const result = await pullout(await win32.read('/c/windows/hello/world', {
+    const result = await pullout(await win32.read('c:\\windows\\hello\\world', {
         root: 'c:\\windows',
     }));
     
