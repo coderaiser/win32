@@ -1,6 +1,6 @@
 # win32
 
-Win32 specific functions module
+Win32 specific functions module for [Cloud Commander](https://cloudcmd.io).
 
 ## Install
 
