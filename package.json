@@ -38,7 +38,7 @@
     "madrun": "^8.6.0",
     "mock-require": "^3.0.3",
     "putout": "^15.3.1",
-    "supertape": "^5.0.0"
+    "supertape": "^7.2.3"
   },
   "engines": {
     "node": ">=14"
