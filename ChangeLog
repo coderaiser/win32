@@ -1,3 +1,18 @@
+2022.04.22, v7.0.0
+
+fix:
+- (win32) read: web path -> win path (coderaiser/cloudcmd#333)
+
+
+feature:
+- win32: drop support of node < 16
+- (package) eslint-plugin-putout v14.11.0
+- (package) eslint v8.13.0
+- (package) madrun v9.0.2
+- (package) putout v25.15.0
+- (package) supertape v7.2.3
+
+
 2021.03.16, v6.0.2
 
 fix:
