@@ -1,3 +1,9 @@
+2022.04.23, v7.1.0
+
+feature:
+- win32: add support of NBSP encoding
+
+
 2022.04.22, v7.0.0
 
 fix:
