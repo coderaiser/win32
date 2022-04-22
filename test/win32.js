@@ -107,7 +107,7 @@ test('win32: read: dir: files', async (t) => {
     
     stopAll();
     
-    t.equal(files, expectedFiles);
+    t.deepEqual(files, expectedFiles);
     t.end();
 });
 
@@ -276,3 +276,41 @@ test('win32: read: root: on windows', async (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('win32: read: nbsp', async (t) => {
+    const read = stub().returns({
+        files: [{
+            name: 'hello\xa0world.txt',
+            type: 'file',
+            size: '5b',
+            date: '--.--.----',
+            mode: '--- --- ---',
+            owner: 0,
+        }],
+    });
+    
+    mockRequire('redzip', {
+        read,
+    });
+    
+    reRequire('mellow');
+    const win32 = reRequire('..');
+    const result = await pullout(await win32.read(__dirname));
+    const expected = stringify({
+        path: __dirname,
+        files: [{
+            name: 'hello&nbsp;world.txt',
+            type: 'file',
+            size: '5b',
+            date: '--.--.----',
+            mode: '--- --- ---',
+            owner: 0,
+        }],
+    }, null, 4);
+    
+    stopAll();
+    
+    t.equal(result, expected);
+    t.end();
+});
+
