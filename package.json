@@ -34,7 +34,7 @@
     "coveralls": "^3.1.0",
     "eslint": "^8.13.0",
     "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-putout": "^7.0.0",
+    "eslint-plugin-putout": "^14.11.0",
     "madrun": "^9.0.2",
     "mock-require": "^3.0.3",
     "putout": "^25.15.0",
