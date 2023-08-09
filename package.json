@@ -32,7 +32,7 @@
     "through2": "^4.0.2"
   },
   "devDependencies": {
-    "c8": "^7.6.0",
+    "c8": "^8.0.1",
     "coveralls": "^3.1.0",
     "eslint": "^8.13.0",
     "eslint-plugin-node": "^11.0.0",
