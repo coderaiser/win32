@@ -40,7 +40,7 @@
     "madrun": "^9.0.2",
     "mock-require": "^3.0.3",
     "putout": "^25.15.0",
-    "supertape": "^7.2.3"
+    "supertape": "^8.4.1"
   },
   "engines": {
     "node": ">=16"
