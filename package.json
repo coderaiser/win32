@@ -2,7 +2,6 @@
   "name": "win32",
   "version": "7.1.0",
   "type": "commonjs",
-  "commitType": "colon",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "Windows specific node functions",
   "homepage": "http://github.com/coderaiser/win32",
@@ -33,7 +32,6 @@
   },
   "devDependencies": {
     "c8": "^8.0.1",
-    "coveralls": "^3.1.0",
     "eslint": "^8.13.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-putout": "^19.0.3",

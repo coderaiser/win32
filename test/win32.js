@@ -14,7 +14,9 @@ const {stringify} = JSON;
 
 test('win32: unicodify: linux', async (t) => {
     const stream = unicodify();
-    Readable.from('hello').pipe(stream);
+    Readable
+        .from('hello')
+        .pipe(stream);
     const result = await pullout(stream);
     
     t.equal(result, 'hello');
@@ -39,6 +41,7 @@ test('win32: read: stringify with spaces', async (t) => {
     
     const win32 = reRequire('..');
     const result = await pullout(await win32.read(__dirname));
+    
     const expected = stringify({
         path: __dirname,
         files: [{
@@ -128,9 +131,11 @@ test('win32: read: root', async (t) => {
     });
     
     const win32 = reRequire('..');
+    
     const result = await pullout(await win32.read('/hello/world', {
         root: '/hello',
     }));
+    
     const expected = stringify({
         path: '/world',
         files: [{
@@ -166,9 +171,11 @@ test('win32: read: root: is set', async (t) => {
     });
     
     const win32 = reRequire('..');
+    
     const result = await pullout(await win32.read('/', {
         root: '/',
     }));
+    
     const expected = stringify({
         path: '/',
         files: [{
@@ -204,6 +211,7 @@ test('win32: read: root: long path is set', async (t) => {
     });
     
     const win32 = reRequire('..');
+    
     const result = await pullout(await win32.read('/hello/world', {
         root: '/',
     }));
@@ -243,6 +251,7 @@ test('win32: read: root: on windows', async (t) => {
     });
     
     const {platform} = process;
+    
     Object.defineProperty(process, 'platform', {
         value: 'win32',
     });
@@ -251,6 +260,7 @@ test('win32: read: root: on windows', async (t) => {
     
     reRequire('mellow');
     const win32 = reRequire('..');
+    
     const result = await pullout(await win32.read('c:\\windows\\hello\\world', {
         root: 'c:\\windows',
     }));
@@ -296,6 +306,7 @@ test('win32: read: nbsp', async (t) => {
     reRequire('mellow');
     const win32 = reRequire('..');
     const result = await pullout(await win32.read(__dirname));
+    
     const expected = stringify({
         path: __dirname,
         files: [{
@@ -313,4 +324,3 @@ test('win32: read: nbsp', async (t) => {
     t.equal(result, expected);
     t.end();
 });
-

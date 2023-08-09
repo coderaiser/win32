@@ -32,7 +32,8 @@ Convert `cp437` (or other detected by `prepareCodePage`) to `utf8`;
 const win = require('win32');
 const {exec} = require('child_process');
 
-exec('dir').stdout
+exec('dir')
+    .stdout
     .pipe(win.unicodify())
     .pipe(process.stdout);
 ```
