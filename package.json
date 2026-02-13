@@ -27,7 +27,7 @@
     "iconv-lite": "^0.7.2",
     "mellow": "^3.0.0",
     "pullout": "^5.0.1",
-    "redzip": "^3.0.0",
+    "redzip": "^4.0.1",
     "through2": "^4.0.2"
   },
   "devDependencies": {
