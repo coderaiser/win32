@@ -1,5 +1,10 @@
 {
     "rules": {
-        "nodejs/remove-process-exit": "off"
+        "nodejs/remove-process-exit": "off",
+        "declare": ["on", {
+            "dismiss": [
+                "once"
+            ]
+        }]
     }
 }

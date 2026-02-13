@@ -1,24 +1,22 @@
-'use strict';
+import process from 'node:process';
+import path, {dirname} from 'node:path';
+import {Readable} from 'node:stream';
+import {fileURLToPath} from 'node:url';
+import {stub, test} from 'supertape';
+import pullout from 'pullout';
+import * as win32 from '../lib/win32.js';
 
-const process = require('node:process');
-const path = require('node:path');
-const {Readable} = require('node:stream');
-
-const {stub, test} = require('supertape');
-const pullout = require('pullout');
-const mockRequire = require('mock-require');
-
-const {unicodify} = require('..');
-
-const {reRequire, stopAll} = mockRequire;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const {stringify} = JSON;
 
 test('win32: unicodify: linux', async (t) => {
-    const stream = unicodify();
+    const stream = win32.unicodify();
     
     Readable
         .from('hello')
         .pipe(stream);
+    
     const result = await pullout(stream);
     
     t.equal(result, 'hello');
@@ -26,7 +24,7 @@ test('win32: unicodify: linux', async (t) => {
 });
 
 test('win32: read: stringify with spaces', async (t) => {
-    const read = stub().returns({
+    const redzipRead = stub().returns({
         files: [{
             name: 'hello.txt',
             type: 'file',
@@ -37,12 +35,9 @@ test('win32: read: stringify with spaces', async (t) => {
         }],
     });
     
-    mockRequire('redzip', {
-        read,
-    });
-    
-    const win32 = reRequire('..');
-    const result = await pullout(await win32.read(__dirname));
+    const result = await pullout(await win32.read(__dirname, {
+        redzipRead,
+    }));
     
     const expected = stringify({
         path: __dirname,
@@ -56,14 +51,12 @@ test('win32: read: stringify with spaces', async (t) => {
         }],
     }, null, 4);
     
-    stopAll();
-    
     t.equal(result, expected);
     t.end();
 });
 
 test('win32: read: dir: contentLength', async (t) => {
-    const read = stub().returns({
+    const redzipRead = stub().returns({
         type: 'directory',
         files: [{
             name: 'hello.txt',
@@ -75,14 +68,9 @@ test('win32: read: dir: contentLength', async (t) => {
         }],
     });
     
-    mockRequire('redzip', {
-        read,
+    const {contentLength} = await win32.read(__dirname, {
+        redzipRead,
     });
-    
-    const win32 = reRequire('..');
-    const {contentLength} = await win32.read(__dirname);
-    
-    stopAll();
     
     t.ok(contentLength);
     t.end();
@@ -98,26 +86,21 @@ test('win32: read: dir: files', async (t) => {
         owner: 0,
     }];
     
-    const read = stub().returns({
+    const redzipRead = stub().returns({
         type: 'directory',
         files: expectedFiles,
     });
     
-    mockRequire('redzip', {
-        read,
+    const {files} = await win32.read(__dirname, {
+        redzipRead,
     });
-    
-    const win32 = reRequire('..');
-    const {files} = await win32.read(__dirname);
-    
-    stopAll();
     
     t.deepEqual(files, expectedFiles);
     t.end();
 });
 
 test('win32: read: root', async (t) => {
-    const read = stub().returns({
+    const redzipRead = stub().returns({
         files: [{
             name: 'hello.txt',
             type: 'file',
@@ -128,14 +111,9 @@ test('win32: read: root', async (t) => {
         }],
     });
     
-    mockRequire('redzip', {
-        read,
-    });
-    
-    const win32 = reRequire('..');
-    
     const result = await pullout(await win32.read('/hello/world', {
         root: '/hello',
+        redzipRead,
     }));
     
     const expected = stringify({
@@ -150,14 +128,12 @@ test('win32: read: root', async (t) => {
         }],
     }, null, 4);
     
-    stopAll();
-    
     t.equal(result, expected);
     t.end();
 });
 
 test('win32: read: root: is set', async (t) => {
-    const read = stub().returns({
+    const redzipRead = stub().returns({
         files: [{
             name: 'hello.txt',
             type: 'file',
@@ -168,14 +144,9 @@ test('win32: read: root: is set', async (t) => {
         }],
     });
     
-    mockRequire('redzip', {
-        read,
-    });
-    
-    const win32 = reRequire('..');
-    
     const result = await pullout(await win32.read('/', {
         root: '/',
+        redzipRead,
     }));
     
     const expected = stringify({
@@ -190,14 +161,12 @@ test('win32: read: root: is set', async (t) => {
         }],
     }, null, 4);
     
-    stopAll();
-    
     t.equal(result, expected);
     t.end();
 });
 
 test('win32: read: root: long path is set', async (t) => {
-    const read = stub().returns({
+    const redzipRead = stub().returns({
         files: [{
             name: 'hello.txt',
             type: 'file',
@@ -208,14 +177,9 @@ test('win32: read: root: long path is set', async (t) => {
         }],
     });
     
-    mockRequire('redzip', {
-        read,
-    });
-    
-    const win32 = reRequire('..');
-    
     const result = await pullout(await win32.read('/hello/world', {
         root: '/',
+        redzipRead,
     }));
     
     const expected = stringify({
@@ -230,14 +194,12 @@ test('win32: read: root: long path is set', async (t) => {
         }],
     }, null, 4);
     
-    stopAll();
-    
     t.equal(result, expected);
     t.end();
 });
 
 test('win32: read: root: on windows', async (t) => {
-    const read = stub().returns({
+    const redzipRead = stub().returns({
         files: [{
             name: 'hello.txt',
             type: 'file',
@@ -248,23 +210,15 @@ test('win32: read: root: on windows', async (t) => {
         }],
     });
     
-    mockRequire('redzip', {
-        read,
-    });
-    
     const {platform} = process;
     
     Object.defineProperty(process, 'platform', {
         value: 'win32',
     });
     
-    mockRequire('path', path.win32);
-    
-    reRequire('mellow');
-    const win32 = reRequire('..');
-    
     const result = await pullout(await win32.read('c:\\windows\\hello\\world', {
         root: 'c:\\windows',
+        redzipRead,
     }));
     
     const expected = stringify({
@@ -283,14 +237,12 @@ test('win32: read: root: on windows', async (t) => {
         value: platform,
     });
     
-    stopAll();
-    
     t.equal(result, expected);
     t.end();
 });
 
 test('win32: read: nbsp', async (t) => {
-    const read = stub().returns({
+    const redzipRead = stub().returns({
         files: [{
             name: 'hello\xa0world.txt',
             type: 'file',
@@ -301,13 +253,9 @@ test('win32: read: nbsp', async (t) => {
         }],
     });
     
-    mockRequire('redzip', {
-        read,
-    });
-    
-    reRequire('mellow');
-    const win32 = reRequire('..');
-    const result = await pullout(await win32.read(__dirname));
+    const result = await pullout(await win32.read(__dirname, {
+        redzipRead,
+    }));
     
     const expected = stringify({
         path: __dirname,
@@ -320,8 +268,6 @@ test('win32: read: nbsp', async (t) => {
             owner: 0,
         }],
     }, null, 4);
-    
-    stopAll();
     
     t.equal(result, expected);
     t.end();

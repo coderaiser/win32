@@ -19,9 +19,9 @@ Read path and if it's root, return `volumes` on `win32`
 Get volumes of Windows platform
 
 ```js
-const win = require('win32');
+import {getVolumes} from 'win32';
 
-const volumes = await win.getVolumes();
+const volumes = await getVolumes();
 ```
 
 ### unicodify()
@@ -29,12 +29,12 @@ const volumes = await win.getVolumes();
 Convert `cp437` (or other detected by `prepareCodePage`) to `utf8`;
 
 ```js
-const {exec} = require('node:child_process');
-const win = require('win32');
+import {exec} from 'node:child_process';
+import {unicodify} from 'win32';
 
 exec('dir')
     .stdout
-    .pipe(win.unicodify())
+    .pipe(unicodify())
     .pipe(process.stdout);
 ```
 
@@ -43,8 +43,8 @@ exec('dir')
 Set code page to `65001` which is `utf8`. Will set back originial before exit.
 
 ```js
-const win = require('win32');
-win.prepareCodePage();
+import {prepareCodePage} from 'win32';
+prepareCodePage();
 ```
 
 ### isVolume(command)
@@ -52,8 +52,9 @@ win.prepareCodePage();
 Determines is `command` is volume:
 
 ```js
-const win = require('win32');
-win.isVolume('c:\\');
+import {isVolume} from 'win32';
+
+isVolume('c:\\');
 // returns on windows
 true;
 ```
@@ -63,8 +64,9 @@ true;
 Determines is `command` is changing of `volume`:
 
 ```js
-const win = require('win32');
-win.isChangeVolume('c:');
+import {isChangeVolume} from 'win32';
+
+isChangeVolume('c:');
 // returns
 true;
 ```
