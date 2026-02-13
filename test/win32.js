@@ -1,7 +1,8 @@
 'use strict';
 
-const path = require('path');
-const {Readable} = require('stream');
+const process = require('node:process');
+const path = require('node:path');
+const {Readable} = require('node:stream');
 
 const {stub, test} = require('supertape');
 const pullout = require('pullout');
@@ -14,6 +15,7 @@ const {stringify} = JSON;
 
 test('win32: unicodify: linux', async (t) => {
     const stream = unicodify();
+    
     Readable
         .from('hello')
         .pipe(stream);

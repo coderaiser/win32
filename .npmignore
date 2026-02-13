@@ -1,7 +1,9 @@
 .*
 *.swp
+*.lock
+*.log
 
 test
-yarn-error.log
-
 coverage
+yarn-error.log
+*.config.*

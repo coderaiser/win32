@@ -29,8 +29,8 @@ const volumes = await win.getVolumes();
 Convert `cp437` (or other detected by `prepareCodePage`) to `utf8`;
 
 ```js
+const {exec} = require('node:child_process');
 const win = require('win32');
-const {exec} = require('child_process');
 
 exec('dir')
     .stdout

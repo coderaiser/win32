@@ -7,7 +7,7 @@
   "homepage": "http://github.com/coderaiser/win32",
   "repository": {
     "type": "git",
-    "url": "git://github.com/coderaiser/win32.git"
+    "url": "git+https://github.com/coderaiser/win32.git"
   },
   "main": "lib/win32.js",
   "scripts": {
