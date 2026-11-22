@@ -31,8 +31,6 @@ jobs:
         run: bun i --no-save
       - name: Init Madrun
         run: madrun --init
-      - name: Bootstrap
-        run: redrun bootstrap
       - name: Lint
         run: redrun lint
       - name: Coverage
