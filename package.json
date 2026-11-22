@@ -36,7 +36,7 @@
     "madrun": "^13.0.4",
     "putout": "^42.26.3",
     "superc8": "^12.7.0",
-    "supertape": "^12.5.0"
+    "supertape": "^13.6.2"
   },
   "engines": {
     "node": ">=22"
