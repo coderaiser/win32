@@ -1,0 +1,42 @@
+name: Windows CI
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+jobs:
+  windows:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 22.x
+          - 24.x
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        run: bun i --no-save
+      - name: Info (wmic is absent on new Windows 11)
+        run: |
+          node -v
+          [bool](Get-Command wmic -ErrorAction SilentlyContinue)
+          [bool](Get-Command powershell.exe -ErrorAction SilentlyContinue)
+          Get-PSDrive -PSProvider FileSystem | Format-Table Name, Root
+      - name: Unit tests
+        run: npx madrun test
+      - name: E2E tests
+        if: always()
+        run: npx madrun test:e2e
+      - name: E2E tests (direct, without madrun)
+        if: always()
+        run: node node_modules/supertape/bin/supertape.js "e2e/*.js" -f fail

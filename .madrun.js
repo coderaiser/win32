@@ -6,6 +6,7 @@ export default {
     'lint:fresh': () => run('lint', '--fresh'),
     'fix:lint': () => run('lint', '--fix'),
     'test': () => 'tape test/*.js',
+    'test:e2e': () => 'tape e2e/*.js',
     'watch:coverage': () => run('watcher', 'npm run coverage'),
     'watch:test': () => run('watcher', 'npm test'),
     'report': () => 'c8 report --reporter=lcov',

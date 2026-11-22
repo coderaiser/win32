@@ -16,6 +16,7 @@
     "lint:fresh": "madrun lint:fresh",
     "fix:lint": "madrun fix:lint",
     "test": "madrun test",
+    "test:e2e": "madrun test:e2e",
     "watch:coverage": "madrun watch:coverage",
     "watch:test": "madrun watch:test",
     "report": "madrun report",
@@ -28,7 +29,8 @@
     "mellow": "^3.0.0",
     "pullout": "^5.0.1",
     "redzip": "^4.0.1",
-    "through2": "^5.0.12"
+    "through2": "^5.0.12",
+    "try-to-catch": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^10.0.0",

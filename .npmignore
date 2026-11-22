@@ -8,4 +8,5 @@
 yarn-error.log
 
 test
+e2e
 coverage
