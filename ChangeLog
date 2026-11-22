@@ -1,3 +1,14 @@
+2026.11.22, v8.1.0
+
+feature:
+- dd44d08 win32: improve support of win11 (coderaiser/cloudcmd#465)
+- f53e07a win32: through2 v5.0.12
+- f8d8ddd win32: supertape v13.6.2
+- f2ec15e win32: putout v42.26.3
+- 711eded win32: madrun v13.0.4
+- bc7b2be win32: eslint-plugin-putout v31.5.0
+- 6508aaa win32: superc8 v12.7.0
+
 2026.02.13, v8.0.0
 
 feature:
