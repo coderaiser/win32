@@ -2,9 +2,7 @@
     "rules": {
         "nodejs/remove-process-exit": "off",
         "declare": ["on", {
-            "dismiss": [
-                "once"
-            ]
+            "dismiss": ["once"]
         }]
     }
 }

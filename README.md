@@ -44,6 +44,7 @@ Set code page to `65001` which is `utf8`. Will set back originial before exit.
 
 ```js
 import {prepareCodePage} from 'win32';
+
 prepareCodePage();
 ```
 

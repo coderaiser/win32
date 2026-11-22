@@ -1,5 +1,5 @@
 import process from 'node:process';
-import path, {dirname} from 'node:path';
+import {dirname} from 'node:path';
 import {Readable} from 'node:stream';
 import {fileURLToPath} from 'node:url';
 import {stub, test} from 'supertape';
